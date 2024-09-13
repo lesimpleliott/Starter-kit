@@ -7,6 +7,7 @@ const fs = require("fs");
 const path = require("path");
 const { updatePackageJson } = require("../utils/updatePackageJSON");
 const { copyTemplateFile } = require("../utils/copyTemplateFile");
+const { updateMainTsx } = require("./updateMainTsx");
 
 // Fonction principale pour ajouter un store
 async function addStore(projectPath) {
@@ -53,6 +54,8 @@ async function addStore(projectPath) {
         "redux/app.slice.ts",
         path.join(projectPath, "src", "stores")
       );
+      // Ajouter le provider dans le fichier main.tsx
+      updateMainTsx(projectPath);
 
       console.log(`✅ ${response.store} est ajouté au projet.`);
     }

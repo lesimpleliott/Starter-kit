@@ -13,7 +13,6 @@ Pour utiliser ce store dans un composant React :
 
 ```typescript
 import useStoreMenu from 'src/stores/menu.store';
-const MyComponent: React.FC = () => {
 const { menuIsOpen, setMenuIsOpen } = useStoreMenu();
 ```
 */
