@@ -1,20 +1,28 @@
 const { askProjectName } = require("./features/askProjectName");
 const { createFolder } = require("./features/createFolder");
-const { updatePackageJson } = require("./features/updatePackageJSON");
+const { updatePackageJson } = require("./features/updatePackageJson");
+const { addStore } = require("./features/addStore");
 
 async function createProject() {
-  const { projectName, projectPath } = await askProjectName();
+  try {
+    // Création du projet
+    const { projectName, projectPath } = await askProjectName(); // nom du projet et chemin
+    createFolder(projectPath); // Créer le dossier du projet
+    updatePackageJson(projectPath, projectName); // Mettre à jour le package.json
 
-  // Créer le dossier avec le template
-  createFolder(projectPath);
-  // Remplacer le nom du projet dans package.json
-  updatePackageJson(projectPath, projectName);
+    // FEATURES
+    // Ajout d'un store
+    await addStore(projectPath);
 
-  // Ajout de dépendances
-
-  // Afficher un message de succès
-  console.log(`🚀 Le projet '${projectPath}' a été créé avec succès !`);
-  // console.log(`🚀 Le projet '${projectName}' a été créé avec succès !`);
+    // Afficher un message de succès
+    console.log("");
+    console.log(`🚀 Le projet '${projectPath}' a été créé avec succès !`);
+  } catch (error) {
+    console.error(
+      "❌ Une erreur s'est produite lors de la création du projet:",
+      error
+    );
+  }
 }
 
 createProject();
