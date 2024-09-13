@@ -4,7 +4,7 @@ const path = require("path");
 const templatePath = path.join(__dirname, "..", "template/ReactApp");
 
 // Fonction utilitaire pour copier les fichiers du template
-function copyTemplate(destination) {
+function copyTemplateReactApp(destination) {
   function copyDir(src, dest) {
     const entries = fs.readdirSync(src, { withFileTypes: true });
     entries.forEach((entry) => {
@@ -22,4 +22,4 @@ function copyTemplate(destination) {
   copyDir(templatePath, destination);
 }
 
-module.exports = { copyTemplate };
+module.exports = { copyTemplateReactApp };

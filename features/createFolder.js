@@ -3,12 +3,12 @@
  */
 
 const fs = require("fs");
-const { copyTemplate } = require("../utils/copyTemplate");
+const { copyTemplateReactApp } = require("../utils/copyTemplateReactApp");
 
 // Fonction pour créer le dossier et copier le template
 function createFolder(projectPath) {
   fs.mkdirSync(projectPath, { recursive: true });
-  copyTemplate(projectPath);
+  copyTemplateReactApp(projectPath);
   // console.log(`📂 Le dossier '${projectPath}' a été créé.`);
 }
 
