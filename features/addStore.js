@@ -23,7 +23,7 @@ async function addStore(projectPath) {
     // INSTALLATION DE ZUSTAND
     if (response.store === "zustand") {
       // Ajouter les dépendances pour Zustand
-      updatePackageJson(projectPath, { zustand: "^4.5.5" });
+      updatePackageJson(projectPath, { dependencies: { zustand: "^4.5.5" } });
 
       // Copier et renommer le template zustand
       copyAndRenameFile(
@@ -39,8 +39,7 @@ async function addStore(projectPath) {
     if (response.store === "redux") {
       // Ajouter les dépendances pour Redux
       updatePackageJson(projectPath, {
-        "react-redux": "^9.1.2",
-        "@reduxjs/toolkit": "^2.2.7",
+        dependencies: { "react-redux": "^9.1.2", "@reduxjs/toolkit": "^2.2.7" },
       });
 
       // Copier et renommer le Template redux store

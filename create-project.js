@@ -8,11 +8,12 @@ async function createProject() {
     // Création du projet
     const { projectName, projectPath } = await askProjectName(); // nom du projet et chemin
     createFolder(projectPath); // Créer le dossier du projet
-    updatePackageJson(projectPath, projectName); // Mettre à jour le package.json
+    updatePackageJson(projectPath, { projectName: projectName }); // Mettre à jour le nom dans le package.json
 
     // FEATURES
     // Ajout d'un store
     await addStore(projectPath);
+    await addStyle(projectPath);
 
     // Afficher un message de succès
     console.log("");
