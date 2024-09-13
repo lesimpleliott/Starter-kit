@@ -32,13 +32,22 @@ function updatePackageJson(projectPath, options = {}) {
     console.log(`✅ Le nom du projet a été mis à jour.`);
   }
 
-  // Ajouter ou mettre à jour les dépendances si fournies
+  // Ajouter ou mettre à jour les dependencies si fournies
   if (options.dependencies) {
     packageJson.dependencies = packageJson.dependencies || {};
     Object.keys(options.dependencies).forEach((dep) => {
       packageJson.dependencies[dep] = options.dependencies[dep];
     });
-    console.log(`✅ Les dépendances ont été mises à jour.`);
+    console.log(`✅ Les dependencies ont été mises à jour.`);
+  }
+
+  // Ajouter ou mettre à jour les devDépendances si fournies
+  if (options.devDependencies) {
+    packageJson.devDependencies = packageJson.devDependencies || {};
+    Object.keys(options.devDependencies).forEach((dep) => {
+      packageJson.devDependencies[dep] = options.devDependencies[dep];
+    });
+    console.log(`✅ Les devDependencies ont été mises à jour.`);
   }
 
   // Écrire les modifications dans package.json
