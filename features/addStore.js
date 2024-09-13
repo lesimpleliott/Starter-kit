@@ -31,7 +31,10 @@ async function addStore(projectPath) {
 
       // Copier et renommer le template zustand
       copyAndRenameFile(
-        path.join(__dirname, "../template/LibrairiesFiles/zustandExample.ts"),
+        path.join(
+          __dirname,
+          "../template/LibrairiesFiles/zustand/zustandExample.ts"
+        ),
         path.join(projectPath, "src", "stores", "zustandExample.ts"),
         "menu.store.ts"
       );
@@ -50,7 +53,7 @@ async function addStore(projectPath) {
       copyAndRenameFile(
         path.join(
           __dirname,
-          "../template/LibrairiesFiles/reduxStoreExample.ts"
+          "../template/LibrairiesFiles/redux/reduxStoreExample.ts"
         ),
         path.join(projectPath, "src", "stores", "reduxStoreExample.ts"),
         "store.ts"
@@ -60,7 +63,7 @@ async function addStore(projectPath) {
       copyAndRenameFile(
         path.join(
           __dirname,
-          "../template/LibrairiesFiles/reduxSliceExample.ts"
+          "../template/LibrairiesFiles/redux/reduxSliceExample.ts"
         ),
         path.join(projectPath, "src", "stores", "reduxSliceExample.ts"),
         "app.slice.ts"
