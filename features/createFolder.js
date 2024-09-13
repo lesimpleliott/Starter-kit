@@ -1,3 +1,7 @@
+/**
+ * @params {string} projectPath - Chemin du projet
+ */
+
 const fs = require("fs");
 const { copyTemplate } = require("../utils/copyTemplate");
 

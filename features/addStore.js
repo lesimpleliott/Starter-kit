@@ -1,3 +1,7 @@
+/**
+ * @param {string} projectPath - Chemin du projet
+ */
+
 const prompts = require("prompts");
 const fs = require("fs");
 const path = require("path");

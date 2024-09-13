@@ -1,3 +1,8 @@
+/**
+ * @params {string} projectName - Nom du projet
+ * @params {string} projectPath - Chemin du projet
+ */
+
 const fs = require("fs");
 const path = require("path");
 const readline = require("readline");
