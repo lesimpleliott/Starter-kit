@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "eLeGarage starter-kit React",
   "scripts": {
-    "test": "node create-project.js"
+    "elegarage": "node create-project.js"
   },
   "keywords": [],
   "author": "",
