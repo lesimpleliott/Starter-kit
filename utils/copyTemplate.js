@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-const templatePath = path.join(__dirname, "..", "template");
+const templatePath = path.join(__dirname, "..", "template/ReactApp");
 
 // Fonction utilitaire pour copier les fichiers du template
 function copyTemplate(destination) {
