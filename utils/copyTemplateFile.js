@@ -22,4 +22,31 @@ function copyTemplateFile(
   fs.copyFileSync(fullSrcPath, fullDestPath); // Copier le fichier
 }
 
-module.exports = { copyTemplateFile };
+/**
+ * Fonction pour copier un répertoire et tout son contenu depuis un répertoire de base.
+ * @param {string} src - Chemin relatif du répertoire source à partir du répertoire de base (inclut le dossier à copier)
+ * @param {string} destDir - Répertoire de destination où le contenu sera copié
+ * @param {string} baseDir - (optionnel) Chemin de base pour le répertoire source
+ */
+function copyTemplateDirectory(src, destDir, baseDir = path.join(__dirname, "../template/LibrairiesFiles")) {
+  const fullSrcDir = path.join(baseDir, src); // Combiner le chemin de base et le chemin source
+  const entries = fs.readdirSync(fullSrcDir, { withFileTypes: true }); // Lire le contenu du répertoire source
+
+  // Créer le répertoire de destination s'il n'existe pas
+  fs.mkdirSync(destDir, { recursive: true });
+
+  for (let entry of entries) {
+    const srcPath = path.join(fullSrcDir, entry.name);
+    const destPath = path.join(destDir, entry.name);
+
+    if (entry.isDirectory()) {
+      // Recursion pour les sous-dossiers
+      copyTemplateDirectory(entry.name + '/', destPath, baseDir);
+    } else {
+      // Copier les fichiers
+      fs.copyFileSync(srcPath, destPath);
+    }
+  }
+}
+
+module.exports = { copyTemplateFile, copyTemplateDirectory };

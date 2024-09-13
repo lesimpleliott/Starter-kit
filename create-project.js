@@ -1,7 +1,8 @@
 const { askProjectName } = require("./features/askProjectName");
 const { createFolder } = require("./features/createFolder");
-const { updatePackageJson } = require("./features/updatePackageJson");
+const { updatePackageJson } = require("./utils/updatePackageJSON");
 const { addStore } = require("./features/addStore");
+const { addStyle } = require("./features/addStyle");
 
 async function createProject() {
   try {
@@ -10,10 +11,10 @@ async function createProject() {
     createFolder(projectPath); // Créer le dossier du projet
     updatePackageJson(projectPath, { projectName: projectName }); // Mettre à jour le nom dans le package.json
 
-    // FEATURES
+    // Ajout d'un framework CSS
+    await addStyle(projectPath);
     // Ajout d'un store
     await addStore(projectPath);
-    await addStyle(projectPath);
 
     // Afficher un message de succès
     console.log("");
