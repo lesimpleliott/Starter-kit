@@ -6,7 +6,7 @@ const prompts = require("prompts");
 const fs = require("fs");
 const path = require("path");
 const { updatePackageJson } = require("../utils/updatePackageJSON");
-const { copyAndRenameFile } = require("../utils/copyAndRenameFile");
+const { copyTemplateFile } = require("../utils/copyTemplateFile");
 
 // Fonction principale pour ajouter un store
 async function addStore(projectPath) {
@@ -28,15 +28,10 @@ async function addStore(projectPath) {
     if (response.store === "zustand") {
       // Ajouter les dépendances pour Zustand
       updatePackageJson(projectPath, { dependencies: { zustand: "^4.5.5" } });
-
-      // Copier et renommer le template zustand
-      copyAndRenameFile(
-        path.join(
-          __dirname,
-          "../template/LibrairiesFiles/zustand/zustandExample.ts"
-        ),
-        path.join(projectPath, "src", "stores", "zustandExample.ts"),
-        "menu.store.ts"
+      // Copier le template zustand
+      copyTemplateFile(
+        "zustand/menu.store.ts", // Chemin relatif à partir du chemin de base, inclut le nom du fichier
+        path.join(projectPath, "src", "stores") // Dossier de destination sans préciser le nom du fichier
       );
 
       console.log(`✅ ${response.store} est ajouté au projet.`);
@@ -48,25 +43,15 @@ async function addStore(projectPath) {
       updatePackageJson(projectPath, {
         dependencies: { "react-redux": "^9.1.2", "@reduxjs/toolkit": "^2.2.7" },
       });
-
-      // Copier et renommer le Template redux store
-      copyAndRenameFile(
-        path.join(
-          __dirname,
-          "../template/LibrairiesFiles/redux/reduxStoreExample.ts"
-        ),
-        path.join(projectPath, "src", "stores", "reduxStoreExample.ts"),
-        "store.ts"
+      // Copier le Template redux provider
+      copyTemplateFile(
+        "redux/store.ts",
+        path.join(projectPath, "src", "stores")
       );
-
-      // Copier et renommer le Template redux slice
-      copyAndRenameFile(
-        path.join(
-          __dirname,
-          "../template/LibrairiesFiles/redux/reduxSliceExample.ts"
-        ),
-        path.join(projectPath, "src", "stores", "reduxSliceExample.ts"),
-        "app.slice.ts"
+      // Copier le Template redux Slice
+      copyTemplateFile(
+        "redux/app.slice.ts",
+        path.join(projectPath, "src", "stores")
       );
 
       console.log(`✅ ${response.store} est ajouté au projet.`);
