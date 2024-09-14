@@ -9,6 +9,7 @@ Il s'appuie sur le bundler Vite / React + Typescript
 - Gestion de différents styles (Styled Components ou Tailwind CSS)
 - Choix du store entre "Redux" / "Zustand" pour la gestion de l'état global _(option)_
 - Gestion du Multilingue avec i18Next _(option)_
+- Ouverture du nouveau projet dans VSCode ou Terminal _(option)_
 - Configuration prête à l'emploi pour ESLint et Prettier
 
 ## 📋 Prérequis
@@ -47,19 +48,25 @@ Il s'appuie sur le bundler Vite / React + Typescript
 
 #### Choix de la gestion de l'état :
 
-- **Aucun** : Pas de gestion d'état.
+- **Aucun** : Pas de gestion d'état. _Option par defaut_
 - **Zustand** : Ajout de Zustand avec des exemples de store.
 - **Redux** : Ajout de Redux avec un slice d'exemple.
 
 #### Choix de styles :
 
 - **Styled Components** : Ajoute les fichiers nécessaires pour Styled Components.
-- **Tailwind CSS** : Ajoute les fichiers de configuration pour Tailwind CSS.
+- **Tailwind CSS** : Ajoute les fichiers de configuration pour Tailwind CSS. _Option par defaut_
 
 #### Ajout du multilingue :
 
-- _Non_ : Pas de gestion du multilingue.
+- _Non_ : Pas de gestion du multilingue. _Option par defaut_
 - _Oui_ / **i18Next** : Gestion et installation du multilingue avec i18Next.
+
+#### Ouverture du projet :
+
+- **VSCode** : Ouvre le projet dans Visual Studio Code. _Option par defaut_
+- **Terminal** : Ouvre le projet dans un nouveau Terminal.
+- **Nope** : N'ouvre pas le projet.
 
 ### Exemple de création d'un projet avec Redux et Styled Components :
 
@@ -81,7 +88,8 @@ starter-kit
 │    ├── addStore.js              # Ajoute un store (Redux ou Zustand) au projet
 │    ├── addStyle.js              # Ajoute les fichiers de style (Styled Components ou Tailwind CSS)
 │    ├── askProjectName.js        # Gère l'interaction pour nommer le projet
-│    └── createFolder.js          # Crééer le dossier du projet sur le "Desktop"
+│    ├── createFolder.js          # Crééer le dossier du projet sur le "Desktop"
+│    └── openProject.js           # Ouvre le nouveau projet dans VSCode ou Terminal
 ├── template/                     # Fichiers modèles utilisés pour générer le projet
 │    ├── LibrairiesFiles/         # Contient les templates pour les librairies disponibles
 │    └── ReactApp/                # Structure de base d'un projet React TypeScript

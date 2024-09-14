@@ -29,7 +29,7 @@ function updatePackageJson(projectPath, options = {}) {
   // Mettre à jour le nom du projet si fourni
   if (options.projectName) {
     packageJson.name = options.projectName;
-    console.log(`✅ Le nom du projet a été mis à jour.`);
+    // console.log(`✅ Le nom du projet a été mis à jour.`);
   }
 
   // Ajouter ou mettre à jour les dependencies si fournies
@@ -38,7 +38,7 @@ function updatePackageJson(projectPath, options = {}) {
     Object.keys(options.dependencies).forEach((dep) => {
       packageJson.dependencies[dep] = options.dependencies[dep];
     });
-    console.log(`✅ Les dependencies ont été mises à jour.`);
+    // console.log(`✅ Les dependencies ont été mises à jour.`);
   }
 
   // Ajouter ou mettre à jour les devDépendances si fournies
@@ -47,7 +47,7 @@ function updatePackageJson(projectPath, options = {}) {
     Object.keys(options.devDependencies).forEach((dep) => {
       packageJson.devDependencies[dep] = options.devDependencies[dep];
     });
-    console.log(`✅ Les devDependencies ont été mises à jour.`);
+    // console.log(`✅ Les devDependencies ont été mises à jour.`);
   }
 
   // Écrire les modifications dans package.json

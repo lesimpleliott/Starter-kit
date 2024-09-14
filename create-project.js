@@ -4,6 +4,7 @@ const { updatePackageJson } = require("./utils/updatePackageJSON");
 const { addStore } = require("./features/addStore");
 const { addStyle } = require("./features/addStyle");
 const { addMultilingual } = require("./features/addMultilingual");
+const { openProject } = require("./features/openProject");
 
 async function createProject() {
   try {
@@ -18,6 +19,8 @@ async function createProject() {
     await addStore(projectPath);
     // Ajout de la gestion multilingue
     await addMultilingual(projectPath);
+    // Ouvrir le projet
+    await openProject(projectPath);
 
     // Afficher un message de succès
     console.log("");
