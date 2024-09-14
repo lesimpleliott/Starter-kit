@@ -2,10 +2,9 @@ const prompts = require("prompts");
 const path = require("path");
 const { updatePackageJson } = require("../utils/updatePackageJSON");
 const {
-  copyFile,
-  copyAndRenameFile,
+  copyTemplateDirectory,
   copyTemplateFile,
-} = require("../utils/copyTemplateFile"); // Mise à jour ici
+} = require("../utils/copyTemplateFile");
 
 async function addStyle(projectPath) {
   try {
@@ -73,13 +72,13 @@ async function addStyle(projectPath) {
       // Copier le dossier 'base' et son contenu dans le répertoire de destination
       copyTemplateDirectory(
         "styledComponents/base/",
-        path.join(projectPath, "src", "styles")
+        path.join(projectPath, "src", "styles", "base")
       );
 
       // Copier le dossier 'theme' et son contenu dans le répertoire de destination
       copyTemplateDirectory(
         "styledComponents/theme/",
-        path.join(projectPath, "src", "styles")
+        path.join(projectPath, "src", "styles", "theme")
       );
 
       console.log(`✅ ${response.style} est ajouté au projet.`);
