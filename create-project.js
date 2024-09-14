@@ -3,6 +3,7 @@ const { createFolder } = require("./features/createFolder");
 const { updatePackageJson } = require("./utils/updatePackageJSON");
 const { addStore } = require("./features/addStore");
 const { addStyle } = require("./features/addStyle");
+const { addMultilingual } = require("./features/addMultilingual");
 
 async function createProject() {
   try {
@@ -15,6 +16,8 @@ async function createProject() {
     await addStyle(projectPath);
     // Ajout d'un store
     await addStore(projectPath);
+    // Ajout de la gestion multilingue
+    await addMultilingual(projectPath);
 
     // Afficher un message de succès
     console.log("");

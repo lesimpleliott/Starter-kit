@@ -6,9 +6,9 @@ Il s'appuie sur le bundler Vite / React + Typescript
 ## 🚀 Fonctionnalités
 
 - Initialisation d'un projet React (Vite) avec TypeScript
-- Choix du store entre "Redux" / "Zustand" / "Aucun" pour la gestion de l'état global
 - Gestion de différents styles (Styled Components ou Tailwind CSS)
-- Gestion du Multilingue avec i18Next ou aucun (option à venir)
+- Choix du store entre "Redux" / "Zustand" pour la gestion de l'état global _(option)_
+- Gestion du Multilingue avec i18Next _(option)_
 - Configuration prête à l'emploi pour ESLint et Prettier
 
 ## 📋 Prérequis
@@ -21,13 +21,13 @@ Il s'appuie sur le bundler Vite / React + Typescript
 1. Clonez le dépôt :
 
    ```bash
-   git clone https://github.com/lesimpleliott/starter-kit.git
+   git clone https://github.com/lesimpleliott/Starter-kit.git
    ```
 
 2. Naviguez dans le dossier du projet et installez les dépendances :
 
    ```bash
-   cd starter-kit
+   cd Starter-kit
    npm install
    ```
 
@@ -38,7 +38,7 @@ Il s'appuie sur le bundler Vite / React + Typescript
 1. Pour démarrer un nouveau projet React, exécutez la commande suivante :
 
    ```bash
-   npm run elegarage
+   npm run dev
    ```
 
 2. Suivez les instructions dans le terminal pour nommer votre projet et choisir vos configurations de store et de styles.
@@ -56,15 +56,15 @@ Il s'appuie sur le bundler Vite / React + Typescript
 - **Styled Components** : Ajoute les fichiers nécessaires pour Styled Components.
 - **Tailwind CSS** : Ajoute les fichiers de configuration pour Tailwind CSS.
 
-#### Ajout du multilingue : (à venir)
+#### Ajout du multilingue :
 
-- **Aucun** : Pas de gestion du multilingue.
-- **i18Next** : GEstion et installation du multilingue avec i18Next.
+- _Non_ : Pas de gestion du multilingue.
+- _Oui_ / **i18Next** : Gestion et installation du multilingue avec i18Next.
 
 ### Exemple de création d'un projet avec Redux et Styled Components :
 
 ```bash
-npm run elegarage
+npm run dev
 ```
 
 L'application vous demandera de sélectionner **Redux** pour le store et **Tailwind** pour le style.
@@ -76,18 +76,22 @@ Voici un aperçu de la structure du projet **Starter-Kit**
 
 ```bash
 starter-kit
-├── features/                 # Contient les scripts principaux pour configurer le projet
-│    ├── addStore.js          # Ajoute un store (Redux ou Zustand) au projet
-│    ├── addStyle.js          # Ajoute les fichiers de style (Styled Components ou Tailwind CSS)
-│    ├── askProjectName.js    # Gère l'interaction pour nommer le projet
-│    └── updateMainTsx.js     # Modifie main.tsx pour inclure Redux si nécessaire
-├── template/                 # Fichiers modèles utilisés pour générer le projet
-│    ├── LibrairiesFiles/     # Contient les templates pour Redux, Styled Components, etc.
-│    └── ReactApp/            # Structure de base d'un projet React TypeScript
-├── utils/                    # Scripts utilitaires pour la gestion du projet
-│    ├── copyTemplateFile.js  # Fonction pour copier les fichiers templates
-│    └── updatePackageJSON.js # Fonction pour mettre à jour le package.json
-├── create-project.js         # Script principal pour démarrer la création du projet
+├── features/                     # Contient les scripts principaux pour configurer le projet
+│    ├── addMultiligual.js        # Ajoute la gestion du multilingue au projet avec i18Next
+│    ├── addStore.js              # Ajoute un store (Redux ou Zustand) au projet
+│    ├── addStyle.js              # Ajoute les fichiers de style (Styled Components ou Tailwind CSS)
+│    ├── askProjectName.js        # Gère l'interaction pour nommer le projet
+│    └── createFolder.js          # Crééer le dossier du projet sur le "Desktop"
+├── template/                     # Fichiers modèles utilisés pour générer le projet
+│    ├── LibrairiesFiles/         # Contient les templates pour les librairies disponibles
+│    └── ReactApp/                # Structure de base d'un projet React TypeScript
+├── utils/                        # Scripts utilitaires pour la gestion du projet
+│    ├── copyTemplateFile.js      # Fonctions pour copier les templates avec copyTemplateDirectory() ou copyTemplateFile()
+│    ├── copyTemplateReactApp.js  # Fonctions pour copier le template de base de React
+│    ├── updatePackageJSON.js     # Fonction pour mettre à jour le package.json
+│    └── updateTsx.js             # Fonction pour ajouter des éléments aux fichiers .tsx du dossier React
+├── create-project.js             # Script principal pour démarrer la création du projet
+├── package-lock.json
 ├── package.json
 └── README.md
 
@@ -95,10 +99,9 @@ starter-kit
 
 ### Détails des dossiers principaux :
 
-- **features/** : Contient les scripts principaux pour ajouter un store, des styles, ou modifier le fichier main.tsx.
-
+- **features/** : Contient les scripts principaux pour ajouter un store, des styles etc.
 - **template/** : Contient les fichiers modèles utilisés pour créer le projet final, comme les fichiers Redux, Styled Components, etc.
-  **utils/** : Contient des fonctions utilitaires pour copier les fichiers ou mettre à jour les dépendances du projet.
+- **utils/** : Contient des fonctions utilitaires pour copier les fichiers ou mettre à jour les dépendances du projet.
 
 ## 📦 Librairies utilisées
 
@@ -113,6 +116,8 @@ Ce projet utilise les bibliothèques suivantes avec leurs versions respectives :
 - **Redux Toolkit** : ^2.2.7
 - **Zustand** : ^4.5.5
 - **Styled Components** : ^6.1.13
+- **i18next**: "^23.14.0",
+- **react-i18next**: "^15.0.1",
 
 ### Dépendances de développement :
 
