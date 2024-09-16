@@ -1,7 +1,9 @@
 # 🧨 Starter Kit - eLeGarage
 
-Ce **starter kit** est un générateur de projet React qui permet de démarrer rapidement un projet en intégrant les bibliothèques suivantes.
-Il s'appuie sur le bundler Vite / React + Typescript
+Ce **starter kit** est un générateur de projet React qui permet de démarrer rapidement un projet en intégrant le sbibliothèques usuelles.
+Il s'appuie sur le bundler Vite / React + Typescript.
+
+![Cover Starter Kit](public/coverStarterKit.png)
 
 ## 🚀 Fonctionnalités
 
