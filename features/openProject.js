@@ -1,3 +1,8 @@
+/**
+ * Fonction pour ouvrir le projet dans VSCode ou le terminal
+ * @param {string} projectPath - Chemin du projet
+ */
+
 const { exec } = require("child_process");
 const path = require("path");
 const prompts = require("prompts");

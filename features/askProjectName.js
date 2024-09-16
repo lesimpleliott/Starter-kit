@@ -1,4 +1,5 @@
 /**
+ * Demande le nom du projet à l'utilisateur et vérifie s'il existe déjà
  * @params {string} projectName - Nom du projet
  * @params {string} projectPath - Chemin du projet
  */

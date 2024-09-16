@@ -1,12 +1,21 @@
+/**
+ * Fonction pour mettre à jour un fichier .tsx avec des imports et un wrapper
+ * @param {string} projectPath - Chemin du projet
+ * @param {string} fileTsx - Nom du fichier .tsx à mettre à jour
+ * @param {string} lib - Nom de la librairie à ajouter
+ *
+ * @example
+ * > Mettre à jour le fichier main.tsx en se basant sur le template 'template/LibrairiesFiles/redux/main.js'
+ * updateTsx("path/to/project", "main.tsx", "redux")
+ *
+ * @example
+ * > Mettre à jour le fichier app.tsx en se basant sur le template 'template/LibrairiesFiles/zustand/app.js'
+ * updateTsx("path/to/project", "app.tsx", "zustand")
+ */
+
 const fs = require("fs");
 const path = require("path");
 
-/**
- * Met à jour un fichier .tsx en fonction des modifications spécifiées pour une bibliothèque.
- * @param {string} projectPath - Chemin du projet
- * @param {string} fileTsx - Nom du fichier .tsx à mettre à jour (ex: "main.tsx")
- * @param {string} lib - Nom de la bibliothèque (ex: "i18Next", "redux")
- */
 function updateTsx(projectPath, fileTsx, lib) {
   const filePath = path.join(projectPath, "src", fileTsx);
   const baseTemplatePath = path.join(__dirname, "../template/LibrairiesFiles");
@@ -76,7 +85,7 @@ function updateTsx(projectPath, fileTsx, lib) {
 
   // Écrire les modifications dans le fichier
   fs.writeFileSync(filePath, content, "utf8");
-  console.log(`Le fichier ${fileTsx} a été mis à jour avec ${lib}.`);
+  // console.log(`Le fichier ${fileTsx} a été mis à jour avec ${lib}.`);
 }
 
 module.exports = { updateTsx };

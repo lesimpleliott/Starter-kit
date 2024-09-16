@@ -1,3 +1,8 @@
+/**
+ * Fonction pour ajouter la gestion du multilingue (i18Next) au projet
+ * @param {string} projectPath - Chemin du projet
+ */
+
 const prompts = require("prompts");
 const path = require("path");
 const { updatePackageJson } = require("../utils/updatePackageJSON");

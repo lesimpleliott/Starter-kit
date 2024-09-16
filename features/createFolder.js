@@ -1,4 +1,5 @@
 /**
+ * Crée un dossier pour le projet
  * @params {string} projectPath - Chemin du projet
  */
 

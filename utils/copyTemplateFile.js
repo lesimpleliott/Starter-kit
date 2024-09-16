@@ -1,6 +1,5 @@
-// Fonction pour copier des fichiers depuis le réperoire template/LibrairiesFiles
 /**
- * Fonction pour copier un fichier d'un répertoire de base sans répéter le chemin de base
+ * Fonction pour copier un fichier 'Template' dans un dossier de destination.
  * @param {string} src - Chemin du fichier source à partir du chemin de base (inclut le nom du fichier)
  * @param {string} destDir - Dossier de destination où le fichier sera copié
  * @param {string} baseDir - (optionnel) Chemin de base pour le répertoire source
@@ -23,12 +22,16 @@ function copyTemplateFile(
 }
 
 /**
- * Fonction pour copier un répertoire et tout son contenu depuis un répertoire de base.
+ * Fonction pour copier un répertoire 'Template' dans un dossier de destination.
  * @param {string} src - Chemin relatif du répertoire source à partir du répertoire de base (inclut le dossier à copier)
  * @param {string} destDir - Répertoire de destination où le contenu sera copié
  * @param {string} baseDir - (optionnel) Chemin de base pour le répertoire source
  */
-function copyTemplateDirectory(src, destDir, baseDir = path.join(__dirname, "../template/LibrairiesFiles")) {
+function copyTemplateDirectory(
+  src,
+  destDir,
+  baseDir = path.join(__dirname, "../template/LibrairiesFiles")
+) {
   const fullSrcDir = path.join(baseDir, src); // Combiner le chemin de base et le chemin source
   const entries = fs.readdirSync(fullSrcDir, { withFileTypes: true }); // Lire le contenu du répertoire source
 
@@ -41,7 +44,7 @@ function copyTemplateDirectory(src, destDir, baseDir = path.join(__dirname, "../
 
     if (entry.isDirectory()) {
       // Recursion pour les sous-dossiers
-      copyTemplateDirectory(entry.name + '/', destPath, baseDir);
+      copyTemplateDirectory(entry.name + "/", destPath, baseDir);
     } else {
       // Copier les fichiers
       fs.copyFileSync(srcPath, destPath);

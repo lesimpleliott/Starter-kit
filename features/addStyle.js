@@ -1,3 +1,8 @@
+/**
+ * Fonction pour ajouter un style au projet (Styled Components ou Tailwind)
+ * @param {string} projectPath - Chemin du projet
+ */
+
 const prompts = require("prompts");
 const path = require("path");
 const { updatePackageJson } = require("../utils/updatePackageJSON");

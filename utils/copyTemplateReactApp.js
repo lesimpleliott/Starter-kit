@@ -1,3 +1,8 @@
+/**
+ * Fonction pour copier les fichiers du modèle ReactApp dans un dossier de destination.
+ * @param {string} projectPath - Chemin du projet
+ */
+
 const fs = require("fs");
 const path = require("path");
 

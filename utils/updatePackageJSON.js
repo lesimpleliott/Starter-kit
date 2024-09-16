@@ -1,10 +1,11 @@
 /**
-* Met à jour le package.json
+* Fonction pour mettre à jour le fichier package.json du projet
 
 * @param {string} projectPath - Chemin du projet
-* @param {object} options - Options
+* @param {object} options - Options pour mettre à jour package.json
 * @param {string} options.projectName - Nom du projet
-* @param {object} options.dependencies - Dépendances
+* @param {object} options.dependencies - Dépendances du projet
+* @param {object} options.devDependencies - Dépendances de développement du projet
 
 * @example projectName
 updatePackageJson("path/to/project", { projectName: "mon-projet" });
@@ -12,10 +13,14 @@ updatePackageJson("path/to/project", { projectName: "mon-projet" });
 * @example dependencies
 updatePackageJson("path/to/project", { dependencies: { librairies: "^1.0.1" } });
 
-* @example projectName et dependencies
+* @example devDependencies
+updatePackageJson("path/to/project", { devDependencies: { librairies: "^1.0.1" } });
+
+* @example projectName, dependencies et devDependencies
 updatePackageJson("path/to/project", { 
 projectName: "mon-projet",
-dependencies: { librairies: "^1.0.1" } 
+dependencies: { librairies: "^1.0.1" },
+devDependencies: { librairies: "^1.0.1" }
 });
 **/
 
